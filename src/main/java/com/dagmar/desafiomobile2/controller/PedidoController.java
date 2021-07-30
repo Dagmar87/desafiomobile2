@@ -23,6 +23,8 @@ public class PedidoController {
 	@Autowired
 	private PedidoRepository rep;
 	
+	// Consultar uma lista de todos pedidos cadastrados -
+	// http://localhost:8080/pedido
 	@GetMapping
 	public List findAll(){
 		
@@ -30,6 +32,8 @@ public class PedidoController {
 		
 	}
 	
+	// Consultar um determinado pedido cadastrado partir do id deste -
+	// http://localhost:8080/pedido/{id}
 	@GetMapping(value = "{id}")
 	public ResponseEntity<?> findById(@PathVariable Long id){
 		
@@ -38,6 +42,8 @@ public class PedidoController {
 		
 	}
 	
+	// Criar um novo cadastro de um pedido -
+	// http://localhost:8080/pedido
 	@PostMapping
 	public Pedido create(@RequestBody Pedido ped){
 		
@@ -45,6 +51,8 @@ public class PedidoController {
 		
 	}
 	
+	// Atualizar os dados de um pedido cadastrado -
+	// http://localhost:8080/pedido/{id}
 	@PutMapping(value = "{id}")
 	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Pedido ped){
 		
@@ -58,6 +66,9 @@ public class PedidoController {
 		
 	}
 	
+
+	// Apagar os dados do pedido cadastrado -
+	// http://localhost:8080/pedido/{id}
 	@DeleteMapping(path = "{id}")
 	public ResponseEntity<?> delete(@PathVariable Long id) {
 		

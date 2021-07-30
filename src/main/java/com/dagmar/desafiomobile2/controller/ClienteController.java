@@ -23,6 +23,8 @@ public class ClienteController {
 	@Autowired
 	private ClienteRepository clienteRepository;
 	
+	// Consultar uma lista de todos clientes cadastrados -
+	// http://localhost:8080/cliente
 	@GetMapping
 	public List findAll(){
 		
@@ -30,6 +32,8 @@ public class ClienteController {
 		
 	}
 	
+	// Consultar um determinado cliente cadastrado partir do id deste -
+	// http://localhost:8080/cliente/{id}
 	@GetMapping(value = "{id}")
 	public ResponseEntity<?> findById(@PathVariable Long id){
 		
@@ -38,6 +42,8 @@ public class ClienteController {
 		
 	}
 	
+	// Criar um novo cadastro de um cliente -
+	// http://localhost:8080/cliente
 	@PostMapping
 	public Cliente create(@RequestBody Cliente cli){
 		
@@ -45,6 +51,8 @@ public class ClienteController {
 		
 	}
 	
+	// Atualizar os dados de um cliente cadastrado -
+	// http://localhost:8080/cliente/{id}
 	@PutMapping(value = "{id}")
 	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Cliente cli){
 		
@@ -59,6 +67,8 @@ public class ClienteController {
 		
 	}
 	
+	// Apagar os dados do cliente cadastrado -
+	// http://localhost:8080/nota/{id}
 	@DeleteMapping(path = "{id}")
 	public ResponseEntity<?> delete(@PathVariable Long id) {
 		
